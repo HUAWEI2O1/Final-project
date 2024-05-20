@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+    <link href="website.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css"> <!-- Add the slideshow styles -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="color-overlay"></div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#" class="dropdown">
+            Recipes
+            <ul class="dropdown-menu">
+                <li><a href="#">Adobo</a></li>
+                <li><a href="#">Sinigang</a></li>
+                <li><a href="#">Pancit</a></li>
+                <li><a href="#">Lechon</a></li>
+            </ul>
+        </a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="notify-menu">
+        <logo>
+            <img src="LOGO.png" class="logo" width="95" height="95" />
+        </logo>
+        <nav>
+            <ul class="main-menu">
+                <li onclick="toggleMenu()">&#9776;</li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function toggleMenu() {
+            var sidenav = document.getElementById('mySidenav');
+
+            if (sidenav.style.width === '250px') {
+                closeNav();
+            } else {
+                openNav();
+            }
+        }
+    </script>
+
+
+    <row>
+        <h1 class="title">PINOY RECIPES</h1>
+    </row>
+    <div class="sections">
+        <section id="section1" class="section-bg1 overlay">
+            <img src="light.webp" class="image" alt="Background Image">
+            <div class="text">
+                <h2>Happy tummy, <br>happy life</h2>
+            </div>
+        </section>
+    </div>
+
+
+
+    <h2 class="menu">MENU</h2>
+
+    <div class="w3-content w3-display-container slideshow">
+        <div class="mySlides">
+            <img src="adobochicken.png" style="width:100%" alt="Adobo Chicken">
+            <div class="container">
+                <p>Adobo Chicken</p>
+            </div>
+        </div>
+        <div class="mySlides">
+            <img src="sinigang.jpg" style="width:100%" alt="Sinigang">
+            <div class="container">
+                <p>Sinigang</p>
+            </div>
+        </div>
+        <div class="mySlides">
+            <img src="pancit.jpg" style="width:100%" alt="Pancit">
+            <div class="container">
+                <p>Pancit</p>
+            </div>
+        </div>
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+    <section id="section3 section4" class="section-bg3">
+        <h2>About Us</h2>
+        <p>Jane and John recipe, a website of a filipino food recipe,
+            <br><br> is dedicated to delivering high-quality and innovative food recipes to consumers nationwide.
+            <br><br> From farm to table, we prioritize sourcing the finest ingredients
+            <br><br> and implementing rigorous quality control measures to ensure the utmost freshness, flavor, and
+            nutritional value in every product.
+        </p>
+    </section>
+    <footer class="footer-center">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <h3> Send us a message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i>+63 905 186 2215</p>
+                    <p><i class="fas fa-envelope"></i>tubiojohnlie61@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i>123 Street, Cagayan De Oro, Philippines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
